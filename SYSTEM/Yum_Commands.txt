@@ -1,0 +1,91 @@
+<<<<<<< HEAD
+# Mark Smith 2018 - Centos 7 Yum Commands
+
+# To search for available packages on CentOS 7, use the yum search command
+
+yum search $example
+
+#Find all packages installed on CentOS 7
+
+rpm -qa 
+
+#Find all MySQL RPM packages installed on CentOS 7 you can pipe the output of -qa to grep and use -i to match upper and lower case. If you want to find all mysql related rpms use the command below.
+
+rpm -qa | grep -i mysql
+
+#List all files in RPM package - Simply run this command against any RPM you want to inspect.
+
+rpm -qlp $package.rpm
+
+# Remove packages (See second command as this removes all related packages)
+
+yum -y remove <PACKAGE>
+
+yum clean all
+
+rm -rf /var/cache/yum
+
+# This method requires you to add the directive clean_requirements_on_remove in YUM’s main configuration file /etc/yum.conf. You can use your favorite command line editor to open it for editing as shown.
+
+# vim /etc/yum.conf
+clean_requirements_on_remove=1
+
+# This extension removes any unused dependencies that were added in by an installation package, but would not be removed automatically. It also helps you to keep a system clean of unused libraries and packages.
+
+yum install -y yum-plugin-remove-with-leaves
+
+# Usage
+
+# yum remove <PACKAGE> --remove-leaves
+
+# Find a package that installs a program
+
+yum whatprovides <program or package>
+
+
+=======
+# Mark Smith 2018 - Centos 7 Yum Commands
+
+# To search for available packages on CentOS 7, use the yum search command
+
+yum search $example
+
+#Find all packages installed on CentOS 7
+
+rpm -qa 
+
+#Find all MySQL RPM packages installed on CentOS 7 you can pipe the output of -qa to grep and use -i to match upper and lower case. If you want to find all mysql related rpms use the command below.
+
+rpm -qa | grep -i mysql
+
+#List all files in RPM package - Simply run this command against any RPM you want to inspect.
+
+rpm -qlp $package.rpm
+
+# Remove packages (See second command as this removes all related packages)
+
+yum -y remove <PACKAGE>
+
+yum clean all
+
+rm -rf /var/cache/yum
+
+# This method requires you to add the directive clean_requirements_on_remove in YUM’s main configuration file /etc/yum.conf. You can use your favorite command line editor to open it for editing as shown.
+
+# vim /etc/yum.conf
+clean_requirements_on_remove=1
+
+# This extension removes any unused dependencies that were added in by an installation package, but would not be removed automatically. It also helps you to keep a system clean of unused libraries and packages.
+
+yum install -y yum-plugin-remove-with-leaves
+
+# Usage
+
+# yum remove <PACKAGE> --remove-leaves
+
+# Find a package that installs a program
+
+yum whatprovides <program or package>
+
+
+>>>>>>> 8200ea45433668193f212fc9229262327135dbaf

@@ -1,0 +1,79 @@
+<<<<<<< HEAD
+# Mark Smith 2018
+
+# Show Disks In System
+fdisk -l | grep '^Disk'
+
+# Work With A Disk
+#fdisk /dev/sdb
+
+# p # To Print Partition Table
+
+# d # To Delete A Partition
+
+# n # To Create A Partition
+
+# d # To Delete A Partition
+
+# w # To Write Changes
+
+# q # To Quit Without Writing Changes
+
+# Create A File System
+# mkfs.ext4 /dev/sda<partion number if used>
+
+# Mount Disk To System
+# mkdir /SPACE
+# mount /dev/sda<partition number if used> /SPACE
+# df -H # 
+
+Update fstab 
+# vi /etc/fstab
+/dev/sda              /SPACE           ext4    defaults        1 2
+
+
+
+
+
+
+
+=======
+# Mark Smith 2018
+
+# Show Disks In System
+fdisk -l | grep '^Disk'
+
+# Work With A Disk
+#fdisk /dev/sdb
+
+# p # To Print Partition Table
+
+# d # To Delete A Partition
+
+# n # To Create A Partition
+
+# d # To Delete A Partition
+
+# w # To Write Changes
+
+# q # To Quit Without Writing Changes
+
+# Create A File System
+# mkfs.ext4 /dev/sda<partion number if used>
+
+# Mount Disk To System
+# mkdir /SPACE
+# mount /dev/sda<partition number if used> /SPACE
+# df -H # 
+
+Update fstab 
+# vi /etc/fstab
+/dev/sda              /SPACE           ext4    defaults        1 2
+
+
+
+
+
+
+
+>>>>>>> 8200ea45433668193f212fc9229262327135dbaf

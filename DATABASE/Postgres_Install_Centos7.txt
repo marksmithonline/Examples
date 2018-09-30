@@ -1,0 +1,89 @@
+<<<<<<< HEAD
+# Mark Smith 2018 - Install Postgresql 10 on Centos 7
+
+sudo yum install https://download.postgresql.org/pub/repos/yum/10/redhat/rhel-7-x86_64/pgdg-centos10-10-2.noarch.rpm
+
+sudo yum install postgresql10-server postgresql10-contrib
+
+sudo systemctl enable postgresql-10
+
+sudo /usr/pgsql-10/bin/postgresql-10-setup initdb
+
+# Uncomment and Change Listen address to listen_addresses = '*'
+nano /var/lib/pgsql/10/data/postgresql.conf
+
+# Add the following line in the end of the below file
+vim /var/lib/pgsql/10/data/pg_hba.conf
+
+# To allow connections from one address
+host all all <IP_ADDRESS> trust
+
+or
+
+# To allow connection from any address
+host all all 0.0.0.0/0 trust
+
+sudo firewall-cmd --permanent --zone=public --add-port=5432/tcp
+firewall-cmd --reload
+
+sudo systemctl restart postgresql-10.service
+
+# Connect from command line:
+
+sudo su - postgres
+psql
+
+# Use pgAdmin
+
+# https://www.pgadmin.org/download/
+
+# https://linuxize.com/post/how-to-install-postgresql-on-centos-7/
+
+
+
+
+=======
+# Mark Smith 2018 - Install Postgresql 10 on Centos 7
+
+sudo yum install https://download.postgresql.org/pub/repos/yum/10/redhat/rhel-7-x86_64/pgdg-centos10-10-2.noarch.rpm
+
+sudo yum install postgresql10-server postgresql10-contrib
+
+sudo systemctl enable postgresql-10
+
+sudo /usr/pgsql-10/bin/postgresql-10-setup initdb
+
+# Uncomment and Change Listen address to listen_addresses = '*'
+nano /var/lib/pgsql/10/data/postgresql.conf
+
+# Add the following line in the end of the below file
+vim /var/lib/pgsql/10/data/pg_hba.conf
+
+# To allow connections from one address
+host all all <IP_ADDRESS> trust
+
+or
+
+# To allow connection from any address
+host all all 0.0.0.0/0 trust
+
+sudo firewall-cmd --permanent --zone=public --add-port=5432/tcp
+firewall-cmd --reload
+
+sudo systemctl restart postgresql-10.service
+
+# Connect from command line:
+
+sudo su - postgres
+psql
+
+# Use pgAdmin
+
+# https://www.pgadmin.org/download/
+
+# https://linuxize.com/post/how-to-install-postgresql-on-centos-7/
+
+
+
+
+>>>>>>> 8200ea45433668193f212fc9229262327135dbaf

@@ -1,0 +1,36 @@
+<<<<<<< HEAD
+
+
+
+Open terminal (a ssh connection will work too) and run the Linux installer: 
+rpm -ivh http://www.pulseway.com/download/pulseway_x64.rpm
+
+Alternatively, if your Operating System is working on 32-bit architecture: 
+rpm -ivh http://www.pulseway.com/download/pulseway_x86.rpm
+
+Once Pulseway is installed make a copy of the sample configuration file: 
+cp /etc/pulseway/config.xml.sample /etc/pulseway/config.xml 
+Using your favorite text editor (vim, nano, etc.) edit the config.xml and start customizing the configuration: 
+vim /etc/pulseway/config.xml 
+Note: Make sure to replace Username="username" and Password="password" with your actual username and password.
+
+Start pulseway: 
+=======
+
+
+
+Open terminal (a ssh connection will work too) and run the Linux installer: 
+rpm -ivh http://www.pulseway.com/download/pulseway_x64.rpm
+
+Alternatively, if your Operating System is working on 32-bit architecture: 
+rpm -ivh http://www.pulseway.com/download/pulseway_x86.rpm
+
+Once Pulseway is installed make a copy of the sample configuration file: 
+cp /etc/pulseway/config.xml.sample /etc/pulseway/config.xml 
+Using your favorite text editor (vim, nano, etc.) edit the config.xml and start customizing the configuration: 
+vim /etc/pulseway/config.xml 
+Note: Make sure to replace Username="username" and Password="password" with your actual username and password.
+
+Start pulseway: 
+>>>>>>> 8200ea45433668193f212fc9229262327135dbaf
+/etc/init.d/pulseway start

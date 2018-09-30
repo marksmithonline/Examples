@@ -1,0 +1,179 @@
+<<<<<<< HEAD
+# Mark Smith 2018 - Install Xammp on Centos 7 and harden
+
+# Install the below if not already installed
+yum -y install net-tools wget
+
+wget https://sourceforge.net/projects/xampp/files/XAMPP%20Linux/7.2.10/xampp-linux-x64-7.2.10-0-installer.run/download
+
+mv download xammp_installer.sh
+
+./xammp_installer.sh
+
+# To harden Xammp installation run the below
+
+sudo /opt/lampp/lampp security
+
+# Fix phpmyadmin tmp error
+
+mkdir /opt/lampp/phpmyadmin/tmp
+chmod 777 /opt/lampp/phpmyadmin/tmp
+
+
+# Blowfish error - replace 'xammp' with 35 digit version e.g. $cfg['blowfish_secret'] = '<35 Digits>'
+nano /opt/lampp/phpmyadmin/config.inc.php
+
+# Enable ports through firewall
+
+sudo firewall-cmd --permanent --zone=public --add-port=80/tcp
+sudo firewall-cmd --permanent --zone=public --add-port=443/tcp
+sudo firewall-cmd --permanent --zone=public --add-port=3006/tcp
+firewall-cmd --reload
+
+# start Xammp
+
+sudo /opt/lampp/lampp start
+
+
+# To enable remote access to phpMyAdmin, follow these steps:
+
+Edit the etc/extra/httpd-xampp.conf file in your XAMPP installation directory.
+Within this file, find the lines below.
+
+Alias /phpmyadmin "/opt/lampp/phpmyadmin/"
+<Directory "/opt/lampp/phpmyadmin">
+AllowOverride AuthConfig
+Require local
+
+# Then replace 'Require local' with 'Require all granted'.
+
+Alias /phpmyadmin "/opt/lampp/phpmyadmin/"
+<Directory "/opt/lampp/phpMyAdmin">
+AllowOverride AuthConfig
+Require all granted
+
+
+# To enable systemd control:
+
+nano /etc/systemd/system/xampp.service
+
+
+[Unit]
+Description=XAMPP
+
+[Service]
+ExecStart=/opt/lampp/lampp start
+ExecStop=/opt/lampp/lampp stop
+Type=forking
+
+[Install]
+WantedBy=multi-user.target
+
+
+
+systemctl enable xampp.service
+systemctl start xampp.service
+
+# https://www.apachefriends.org/faq_linux.html
+
+
+
+
+
+
+
+
+
+
+
+
+=======
+# Mark Smith 2018 - Install Xammp on Centos 7 and harden
+
+# Install the below if not already installed
+yum -y install net-tools wget
+
+wget https://sourceforge.net/projects/xampp/files/XAMPP%20Linux/7.2.10/xampp-linux-x64-7.2.10-0-installer.run/download
+
+mv download xammp_installer.sh
+
+./xammp_installer.sh
+
+# To harden Xammp installation run the below
+
+sudo /opt/lampp/lampp security
+
+# Fix phpmyadmin tmp error
+
+mkdir /opt/lampp/phpmyadmin/tmp
+chmod 777 /opt/lampp/phpmyadmin/tmp
+
+
+# Blowfish error - replace 'xammp' with 35 digit version e.g. $cfg['blowfish_secret'] = '<35 Digits>'
+nano /opt/lampp/phpmyadmin/config.inc.php
+
+# Enable ports through firewall
+
+sudo firewall-cmd --permanent --zone=public --add-port=80/tcp
+sudo firewall-cmd --permanent --zone=public --add-port=443/tcp
+sudo firewall-cmd --permanent --zone=public --add-port=3006/tcp
+firewall-cmd --reload
+
+# start Xammp
+
+sudo /opt/lampp/lampp start
+
+
+# To enable remote access to phpMyAdmin, follow these steps:
+
+Edit the etc/extra/httpd-xampp.conf file in your XAMPP installation directory.
+Within this file, find the lines below.
+
+Alias /phpmyadmin "/opt/lampp/phpmyadmin/"
+<Directory "/opt/lampp/phpmyadmin">
+AllowOverride AuthConfig
+Require local
+
+# Then replace 'Require local' with 'Require all granted'.
+
+Alias /phpmyadmin "/opt/lampp/phpmyadmin/"
+<Directory "/opt/lampp/phpMyAdmin">
+AllowOverride AuthConfig
+Require all granted
+
+
+# To enable systemd control:
+
+nano /etc/systemd/system/xampp.service
+
+
+[Unit]
+Description=XAMPP
+
+[Service]
+ExecStart=/opt/lampp/lampp start
+ExecStop=/opt/lampp/lampp stop
+Type=forking
+
+[Install]
+WantedBy=multi-user.target
+
+
+
+systemctl enable xampp.service
+systemctl start xampp.service
+
+# https://www.apachefriends.org/faq_linux.html
+
+
+
+
+
+
+
+
+
+
+
+
+>>>>>>> 8200ea45433668193f212fc9229262327135dbaf

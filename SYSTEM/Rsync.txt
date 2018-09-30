@@ -1,0 +1,20 @@
+<<<<<<< HEAD
+# Mark Smith 2018 - Centos 7 Rsync Commands
+
+# rsync -avzh <user>@<host>:/<source_dir/file> /<destination>
+
+
+# a = Archive
+# v = Verbose
+# z = Compress During Transfer
+=======
+# Mark Smith 2018 - Centos 7 Rsync Commands
+
+# rsync -avzh <user>@<host>:/<source_dir/file> /<destination>
+
+
+# a = Archive
+# v = Verbose
+# z = Compress During Transfer
+>>>>>>> 8200ea45433668193f212fc9229262327135dbaf
+# h = Human Readable

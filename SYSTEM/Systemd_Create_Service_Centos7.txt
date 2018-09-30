@@ -1,0 +1,42 @@
+<<<<<<< HEAD
+# Mark Smith 2018 - Create A Systemd service
+
+nano /etc/systemd/system/xampp.service
+
+
+[Unit]
+Description=XAMPP
+
+[Service]
+ExecStart=/opt/lampp/lampp start
+ExecStop=/opt/lampp/lampp stop
+Type=forking
+
+[Install]
+WantedBy=multi-user.target
+
+
+
+systemctl enable xampp.service
+=======
+# Mark Smith 2018 - Create A Systemd service
+
+nano /etc/systemd/system/xampp.service
+
+
+[Unit]
+Description=XAMPP
+
+[Service]
+ExecStart=/opt/lampp/lampp start
+ExecStop=/opt/lampp/lampp stop
+Type=forking
+
+[Install]
+WantedBy=multi-user.target
+
+
+
+systemctl enable xampp.service
+>>>>>>> 8200ea45433668193f212fc9229262327135dbaf
+systemctl start xampp.service

@@ -1,0 +1,37 @@
+<<<<<<< HEAD
+# Mark Smith 2018
+
+sudo yum install -y yum-utils device-mapper-persistent-data lvm2
+
+sudo yum-config-manager --add-repo https://download.docker.com/linux/centos/docker-ce.repo
+
+sudo yum-config-manager --enable docker-ce-edge
+
+sudo yum -y install docker-ce docker-compose
+
+sudo systemctl enable docker
+
+sudo systemctl start docker
+
+#   sudo usermod -aG docker your-user
+
+
+=======
+# Mark Smith 2018
+
+sudo yum install -y yum-utils device-mapper-persistent-data lvm2
+
+sudo yum-config-manager --add-repo https://download.docker.com/linux/centos/docker-ce.repo
+
+sudo yum-config-manager --enable docker-ce-edge
+
+sudo yum -y install docker-ce docker-compose
+
+sudo systemctl enable docker
+
+sudo systemctl start docker
+
+#   sudo usermod -aG docker your-user
+
+
+>>>>>>> 8200ea45433668193f212fc9229262327135dbaf

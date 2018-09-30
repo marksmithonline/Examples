@@ -1,0 +1,17 @@
+<<<<<<< HEAD
+# Mark Smith 2018 - Centos 7 Bash Tools and Notes
+
+# Install auto completion packages
+sudo yum install -y bash-completion bash-completion-extras
+
+# Use source command to make completion available from bash_completion.sh 
+source /etc/profile.d/bash_completion.sh  
+=======
+# Mark Smith 2018 - Centos 7 Bash Tools and Notes
+
+# Install auto completion packages
+sudo yum install -y bash-completion bash-completion-extras
+
+# Use source command to make completion available from bash_completion.sh 
+source /etc/profile.d/bash_completion.sh  
+>>>>>>> 8200ea45433668193f212fc9229262327135dbaf

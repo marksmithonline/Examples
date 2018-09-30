@@ -1,0 +1,58 @@
+<<<<<<< HEAD
+# Mark Smith 2018 - Centos 7 Create SSH Keys for Windows Putty Client
+
+#These are the steps to setup putty ssh login
+#=============================================
+ssh-keygen -t rsa -b 2048 -f mykey
+cat mykey.pub >> ~/.ssh/authorized_keys
+==============================================
+
+# download mykey
+# start puttygen
+#go to conversion > import key
+#select downloaded mykey
+#Then [Save private key], you can change key comment if needed
+# ============================================================
+#Start putty
+#Key in the host name/ip address together with port, if non standard port is used
+#Then go to [connection] > [ssh] > [auth]
+#Click [Browse] of [Private key file for authentication], choose the previous generated [mykey.ppk]
+#Go back to [Session]
+#Enter the name you want at [Saved sessions] field, then [Save]
+#After all that, hit [Open]
+#Enter your user name when prompted, your should be logged in now
+#=========================================
+# Remeber to remove the generated key files from the server
+# rm mykey mykey.pub
+#=========================================
+
+=======
+# Mark Smith 2018 - Centos 7 Create SSH Keys for Windows Putty Client
+
+#These are the steps to setup putty ssh login
+#=============================================
+ssh-keygen -t rsa -b 2048 -f mykey
+cat mykey.pub >> ~/.ssh/authorized_keys
+==============================================
+
+# download mykey
+# start puttygen
+#go to conversion > import key
+#select downloaded mykey
+#Then [Save private key], you can change key comment if needed
+# ============================================================
+#Start putty
+#Key in the host name/ip address together with port, if non standard port is used
+#Then go to [connection] > [ssh] > [auth]
+#Click [Browse] of [Private key file for authentication], choose the previous generated [mykey.ppk]
+#Go back to [Session]
+#Enter the name you want at [Saved sessions] field, then [Save]
+#After all that, hit [Open]
+#Enter your user name when prompted, your should be logged in now
+#=========================================
+# Remeber to remove the generated key files from the server
+# rm mykey mykey.pub
+#=========================================
+
+>>>>>>> 8200ea45433668193f212fc9229262327135dbaf
+rsync -avzh root@master:/home/* /home/

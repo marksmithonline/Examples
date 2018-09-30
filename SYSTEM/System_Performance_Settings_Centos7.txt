@@ -1,0 +1,24 @@
+<<<<<<< HEAD
+# Mark Smith 2018 - Centos 7 System Performance Settings
+
+tuned-adm list # Show all profiles
+
+tuned-adm active # Show active tuned profile
+
+tuned-adm profile latency-performance # Set tuned profile to latency-performance
+
+cpupower frequency-info --governors # Show cpupower profiles
+
+=======
+# Mark Smith 2018 - Centos 7 System Performance Settings
+
+tuned-adm list # Show all profiles
+
+tuned-adm active # Show active tuned profile
+
+tuned-adm profile latency-performance # Set tuned profile to latency-performance
+
+cpupower frequency-info --governors # Show cpupower profiles
+
+>>>>>>> 8200ea45433668193f212fc9229262327135dbaf
+cpupower frequency-set --governor performance # Set cpupower profile to performance 

@@ -1,0 +1,25 @@
+<<<<<<< HEAD
+# Mark Smith 2018
+
+# Causes Console Screen To Go Blank After 5 minutes
+
+TERM=linux setterm -blank 10 -powerdown 0  -powersave on >/dev/tty0 </dev/tty0
+
+
+# Add the above command to the below file to run the command at system startup
+ 
+# nano /etc/rc.d/rc.local
+
+=======
+# Mark Smith 2018
+
+# Causes Console Screen To Go Blank After 5 minutes
+
+TERM=linux setterm -blank 10 -powerdown 0  -powersave on >/dev/tty0 </dev/tty0
+
+
+# Add the above command to the below file to run the command at system startup
+ 
+# nano /etc/rc.d/rc.local
+
+>>>>>>> 8200ea45433668193f212fc9229262327135dbaf

@@ -1,0 +1,124 @@
+<<<<<<< HEAD
+# Mark Smith 2018 - Centos 7 Useful FirewallD Commands
+
+# Check if Firewalld is running
+sudo firewall-cmd --state
+
+# Check default zone
+sudo firewall-cmd --get-default-zone
+
+# Show active zones
+sudo firewall-cmd --get-zones
+
+# Show all zones
+sudo firewall-cmd --get-active-zones
+
+# List public zones enabled ports/services
+sudo firewall-cmd --zone=public --list-all
+
+# List all zones enabled ports/services
+sudo firewall-cmd --list-all-zones | less
+
+# Change zone for interface eth0 - BECAREFUL IF DOING THIS ON ACTIVE INTERFACE AS SSH MAY NOT BE ENABLED ON NEW ZONE
+sudo firewall-cmd --zone=home --change-interface=eth0
+
+# Set the default zone
+sudo firewall-cmd --set-default-zone=home
+
+# List all services
+sudo firewall-cmd --get-services
+
+# Add a service by name
+sudo firewall-cmd --zone=public --permanent --add-service=http
+
+sudo firewall-cmd --zone=public --permanent --list-services
+
+
+
+# List all rules 
+firewall-cmd --list-all
+
+firewall-cmd --permanent --zone=public --add-service=http
+firewall-cmd --permanent --zone=public --add-service=https
+firewall-cmd --permanent --zone=public --add-service=mysqld
+firewall-cmd --reload
+
+or 
+
+sudo firewall-cmd --permanent --zone=public --add-port=80/tcp
+sudo firewall-cmd --permanent --zone=public --add-port=443/tcp
+sudo firewall-cmd --permanent --zone=public --add-port=3006/tcp
+firewall-cmd --reload
+
+# Remove a port from the firewall
+
+sudo firewall-cmd --permanent --zone=public --remove-port=80/tcp
+
+or 
+
+firewall-cmd --permanent --zone=public --remove-service=http
+
+
+=======
+# Mark Smith 2018 - Centos 7 Useful FirewallD Commands
+
+# Check if Firewalld is running
+sudo firewall-cmd --state
+
+# Check default zone
+sudo firewall-cmd --get-default-zone
+
+# Show active zones
+sudo firewall-cmd --get-zones
+
+# Show all zones
+sudo firewall-cmd --get-active-zones
+
+# List public zones enabled ports/services
+sudo firewall-cmd --zone=public --list-all
+
+# List all zones enabled ports/services
+sudo firewall-cmd --list-all-zones | less
+
+# Change zone for interface eth0 - BECAREFUL IF DOING THIS ON ACTIVE INTERFACE AS SSH MAY NOT BE ENABLED ON NEW ZONE
+sudo firewall-cmd --zone=home --change-interface=eth0
+
+# Set the default zone
+sudo firewall-cmd --set-default-zone=home
+
+# List all services
+sudo firewall-cmd --get-services
+
+# Add a service by name
+sudo firewall-cmd --zone=public --permanent --add-service=http
+
+sudo firewall-cmd --zone=public --permanent --list-services
+
+
+
+# List all rules 
+firewall-cmd --list-all
+
+firewall-cmd --permanent --zone=public --add-service=http
+firewall-cmd --permanent --zone=public --add-service=https
+firewall-cmd --permanent --zone=public --add-service=mysqld
+firewall-cmd --reload
+
+or 
+
+sudo firewall-cmd --permanent --zone=public --add-port=80/tcp
+sudo firewall-cmd --permanent --zone=public --add-port=443/tcp
+sudo firewall-cmd --permanent --zone=public --add-port=3006/tcp
+firewall-cmd --reload
+
+# Remove a port from the firewall
+
+sudo firewall-cmd --permanent --zone=public --remove-port=80/tcp
+
+or 
+
+firewall-cmd --permanent --zone=public --remove-service=http
+
+
+>>>>>>> 8200ea45433668193f212fc9229262327135dbaf
+# https://www.certdepot.net/rhel7-get-started-firewalld/

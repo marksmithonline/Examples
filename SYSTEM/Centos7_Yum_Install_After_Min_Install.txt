@@ -1,0 +1,23 @@
+<<<<<<< HEAD
+# Mark Smith 2018 - Centos 7 Packages To Add To Base Install
+
+yum -y install epel-release
+yum -y install nano vim htop mlocate wget glances rsync cpupowerutils
+
+
+
+
+
+
+=======
+# Mark Smith 2018 - Centos 7 Packages To Add To Base Install
+
+yum -y install epel-release
+yum -y install nano vim htop mlocate wget glances rsync cpupowerutils
+
+
+
+
+
+
+>>>>>>> 8200ea45433668193f212fc9229262327135dbaf

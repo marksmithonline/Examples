@@ -1,0 +1,81 @@
+<<<<<<< HEAD
+# Mark Smith 2018 - Centos 7 Upgrade Kernel to 4.0.1
+
+echo Read This File Rather Than Run It!
+pause
+
+rpm --import https://www.elrepo.org/RPM-GPG-KEY-elrepo.org 
+rpm -Uvh http://www.elrepo.org/elrepo-release-7.0-2.el7.elrepo.noarch.rpm 
+
+
+#Edit repo and set "enabled=" in the kernel section to "1" to enable access to the latest kernel
+
+# vim /etc/yum.repos.d/elrepo.repo
+
+[elrepo-kernel]
+name=ELRepo.org Community Enterprise Linux Kernel Repository - el7
+baseurl=http://elrepo.org/linux/kernel/el7/$basearch/
+        http://mirrors.coreix.net/elrepo/kernel/el7/$basearch/
+        http://jur-linux.org/download/elrepo/kernel/el7/$basearch/
+        http://repos.lax-noc.com/elrepo/kernel/el7/$basearch/
+        http://mirror.ventraip.net.au/elrepo/kernel/el7/$basearch/
+mirrorlist=http://mirrors.elrepo.org/mirrors-elrepo-kernel.el7
+enabled=1 # <---- change 0 to 1
+gpgcheck=1
+gpgkey=file:///etc/pki/rpm-gpg/RPM-GPG-KEY-elrepo.org
+protect=0
+
+yum -y update
+
+# Runnin the below will show conflict errors with existing install packages - use the names displayed in yum remove
+yum install kernel-ml kernel-ml-headers kernel-ml-tools kernel-ml-tools-libs kernel-ml-tools-libs-devel
+
+# May need to change version numbers or just use the confilicting package names to remove as above
+yum remove kernel-headers-3.10.0-123.9.2.el7.x86_64 kernel-tools-3.10.0-123.9.2.el7.x86_64 kernel-tools-libs-3.10.0-123.9.2.el7.x86_64
+
+grub2-set-default 0
+grub2-mkconfig -o /boot/grub2/grub.cfg
+
+
+
+=======
+# Mark Smith 2018 - Centos 7 Upgrade Kernel to 4.0.1
+
+echo Read This File Rather Than Run It!
+pause
+
+rpm --import https://www.elrepo.org/RPM-GPG-KEY-elrepo.org 
+rpm -Uvh http://www.elrepo.org/elrepo-release-7.0-2.el7.elrepo.noarch.rpm 
+
+
+#Edit repo and set "enabled=" in the kernel section to "1" to enable access to the latest kernel
+
+# vim /etc/yum.repos.d/elrepo.repo
+
+[elrepo-kernel]
+name=ELRepo.org Community Enterprise Linux Kernel Repository - el7
+baseurl=http://elrepo.org/linux/kernel/el7/$basearch/
+        http://mirrors.coreix.net/elrepo/kernel/el7/$basearch/
+        http://jur-linux.org/download/elrepo/kernel/el7/$basearch/
+        http://repos.lax-noc.com/elrepo/kernel/el7/$basearch/
+        http://mirror.ventraip.net.au/elrepo/kernel/el7/$basearch/
+mirrorlist=http://mirrors.elrepo.org/mirrors-elrepo-kernel.el7
+enabled=1 # <---- change 0 to 1
+gpgcheck=1
+gpgkey=file:///etc/pki/rpm-gpg/RPM-GPG-KEY-elrepo.org
+protect=0
+
+yum -y update
+
+# Runnin the below will show conflict errors with existing install packages - use the names displayed in yum remove
+yum install kernel-ml kernel-ml-headers kernel-ml-tools kernel-ml-tools-libs kernel-ml-tools-libs-devel
+
+# May need to change version numbers or just use the confilicting package names to remove as above
+yum remove kernel-headers-3.10.0-123.9.2.el7.x86_64 kernel-tools-3.10.0-123.9.2.el7.x86_64 kernel-tools-libs-3.10.0-123.9.2.el7.x86_64
+
+grub2-set-default 0
+grub2-mkconfig -o /boot/grub2/grub.cfg
+
+
+
+>>>>>>> 8200ea45433668193f212fc9229262327135dbaf

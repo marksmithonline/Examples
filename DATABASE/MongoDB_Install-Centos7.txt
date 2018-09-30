@@ -1,0 +1,84 @@
+<<<<<<< HEAD
+# Mark Smith 2018 - Install MongoDB Centos 7
+
+nano /etc/yum.repos.d/mongodb-org-4.0.repo
+
+[mongodb-org-4.0]
+name=MongoDB Repository
+baseurl=https://repo.mongodb.org/yum/redhat/$releasever/mongodb-org/4.0/x86_64/
+gpgcheck=1
+enabled=1
+gpgkey=https://www.mongodb.org/static/pgp/server-4.0.asc
+
+sudo yum install -y mongodb-org
+
+semanage port -a -t mongod_port_t -p tcp 27017
+
+sudo firewall-cmd --permanent --zone=public --add-port=27017/tcp
+firewall-cmd --reload
+
+sudo systemctl enable mongod
+
+sudo systemctl start mongod
+
+# enable remote connections
+
+vim /etc/mongod.conf
+
+change:
+
+# Listen to local interface only. Comment out to listen on all interfaces.
+bind_ip = 127.0.0.1
+
+to
+
+# Listen to local and LAN interfaces.
+bind_ip = 127.0.0.1,<LAN_IP>
+
+
+Log Dir : /var/log/mongodb
+Data Dir : sudo rm -r /var/lib/mongo
+
+=======
+# Mark Smith 2018 - Install MongoDB Centos 7
+
+nano /etc/yum.repos.d/mongodb-org-4.0.repo
+
+[mongodb-org-4.0]
+name=MongoDB Repository
+baseurl=https://repo.mongodb.org/yum/redhat/$releasever/mongodb-org/4.0/x86_64/
+gpgcheck=1
+enabled=1
+gpgkey=https://www.mongodb.org/static/pgp/server-4.0.asc
+
+sudo yum install -y mongodb-org
+
+semanage port -a -t mongod_port_t -p tcp 27017
+
+sudo firewall-cmd --permanent --zone=public --add-port=27017/tcp
+firewall-cmd --reload
+
+sudo systemctl enable mongod
+
+sudo systemctl start mongod
+
+# enable remote connections
+
+vim /etc/mongod.conf
+
+change:
+
+# Listen to local interface only. Comment out to listen on all interfaces.
+bind_ip = 127.0.0.1
+
+to
+
+# Listen to local and LAN interfaces.
+bind_ip = 127.0.0.1,<LAN_IP>
+
+
+Log Dir : /var/log/mongodb
+Data Dir : sudo rm -r /var/lib/mongo
+
+>>>>>>> 8200ea45433668193f212fc9229262327135dbaf
+# https://docs.mongodb.com/manual/tutorial/install-mongodb-on-red-hat/
